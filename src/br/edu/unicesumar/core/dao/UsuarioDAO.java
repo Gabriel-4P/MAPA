@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.awt.Component;
 
-//Teste
 public class UsuarioDAO {
     
     public void cadastrarUsuario(Usuario usuario, Component rootPane) {
