@@ -65,10 +65,10 @@ public class UsuarioDAO {
             
             //Verifica se retornou algum resultado e valida o usuário.
             if(rs.next()) {
-                JOptionPane.showMessageDialog(rootPane, "Login efetuado com sucesso.\nBem vindo(a) " + rs.getString("nome") + "!", "Aviso", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Acesso autorizado.\nBem vindo(a) " + rs.getString("nome") + "!", "Aviso", JOptionPane.PLAIN_MESSAGE);
                 return true;
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Credenciais inválidas.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Acesso negado.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                 return false;
             }
             

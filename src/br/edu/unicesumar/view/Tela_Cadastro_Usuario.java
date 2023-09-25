@@ -24,9 +24,10 @@ public class Tela_Cadastro_Usuario extends javax.swing.JFrame {
     private Tela_Login tl;
     
     public Tela_Cadastro_Usuario(Tela_Login tl) {
-        setLocationRelativeTo(null);
+        
         initComponents();
         setTitle("Cadastro de Usuário");
+        setLocationRelativeTo(null);
         this.tl = tl;
     }
 
@@ -207,7 +208,7 @@ public class Tela_Cadastro_Usuario extends javax.swing.JFrame {
         if (cmpSenha.getText().equals(cmpConfirmaSenha.getText())) {
             return true;
         } else {
-            JOptionPane.showMessageDialog(rootPane, "As senhas não coincidem.");
+            JOptionPane.showMessageDialog(rootPane, "As senhas não são iguais.");
             return false;
         }
     }
@@ -227,7 +228,7 @@ public class Tela_Cadastro_Usuario extends javax.swing.JFrame {
                 
                 dispose();
                 
-                JOptionPane.showMessageDialog(rootPane, "Usuário cadastrado com sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "Cadastro efetuado com sucesso!");
                 
                 tl.setVisible(true);
             }

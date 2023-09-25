@@ -16,9 +16,11 @@ public class Tela_Login extends javax.swing.JFrame {
      * Creates new form Tela_Inicial
      */
     public Tela_Login() {
-        setLocationRelativeTo(null);
+        
         initComponents();
         setTitle("Login");
+        setLocationRelativeTo(null);
+        
     }
     
     /**
@@ -127,12 +129,17 @@ public class Tela_Login extends javax.swing.JFrame {
     private void btnCadastraUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraUsuarioActionPerformed
         Tela_Cadastro_Usuario telacad = new Tela_Cadastro_Usuario(this);
         telacad.setVisible(true);
+        cmpLogin.setText("");
+        cmpSenha.setText("");
         setVisible(false);
     }//GEN-LAST:event_btnCadastraUsuarioActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         UsuarioDAO dao = new UsuarioDAO();
-        dao.validarUsuario(cmpLogin.getText(), cmpSenha.getText(), rootPane);
+        if (dao.validarUsuario(cmpLogin.getText(), cmpSenha.getText(), rootPane)) {
+            cmpLogin.setText("");
+            cmpSenha.setText("");
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void cmpLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmpLoginActionPerformed
